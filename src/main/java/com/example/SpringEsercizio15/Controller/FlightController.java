@@ -1,7 +1,7 @@
 package com.example.SpringEsercizio15.Controller;
 
 import com.example.SpringEsercizio15.Entities.Flight;
-import com.example.SpringEsercizio15.Entities.FlighStatus;
+import com.example.SpringEsercizio15.Entities.FlightStatus;
 import com.example.SpringEsercizio15.repositories.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class FlightController {
             String descriptionString = int_description.toString();
             String fromAirportString = int_fromAirport.toString();
             String toAirportString = int_toAirport.toString();
-            Flight flight = new Flight(i, descriptionString, fromAirportString, toAirportString, FlighStatus.ONTIME);
+            Flight flight = new Flight(i, descriptionString, fromAirportString, toAirportString, FlightStatus.ONTIME);
             flightRepository.saveAndFlush(flight);
         }
         return flightRepository.findAll();
@@ -39,5 +39,5 @@ public class FlightController {
         return flightRepository.findAll();
     }
     @GetMapping("/retrieving/ontime")
-    public List<Flight> findByStatusOnTime() {return flightRepository.flighStatus(FlighStatus.ONTIME);}
+    public List<Flight> findByStatusOnTime() {return flightRepository.flightStatus(FlightStatus.ONTIME);}
 }
