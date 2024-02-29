@@ -28,7 +28,7 @@ public class FlightController {
             String descriptionString = int_description.toString();
             String fromAirportString = int_fromAirport.toString();
             String toAirportString = int_toAirport.toString();
-            Flight flight = new Flight(i, descriptionString, fromAirportString, toAirportString, FlightStatus.ONTIME);
+            Flight flight = new Flight(i, descriptionString, fromAirportString, toAirportString, FlighStatus.ONTIME);
             flightRepository.saveAndFlush(flight);
         }
         return flightRepository.findAll();
